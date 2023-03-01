@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply dark:bg-neutral-900;
+  }
+}
+
+@layer components {
+  .darkTheme {
+    @apply bg-neutral-200 dark:bg-neutral-900  dark:text-neutral-50;
+  }
+  .darkThemeComponent {
+    @apply bg-neutral-900 text-white dark:bg-neutral-50 dark:text-black;
+  }
+  .scrollBarTheme {
+    @apply scrollbar scrollbar-thumb-neutral-900 scrollbar-thumb-rounded-md dark:scrollbar-thumb-white;
+  }
+  .active {
+    @apply bg-neutral-900 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-900;
+  }
+}
+
+@layer utilities {
+  .card {
+    background: transparentize(#fff, 0.8);
+    backdrop-filter: blur(20px);
+    // border: 1px solid transparentize(#fff, 0.5);
+  }
+  .cardDark {
+    background: transparentize(rgb(40, 40, 40), 0.5);
+    backdrop-filter: blur(20px);
+    // border: 1px solid transparentize(rgb(40, 40, 40), 0.5);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  transition: all ease-in-out 200ms;
+}
+
+input {
+  text-align: center;
+  font-weight: bold;
+}
+
+input:focus {
+  font-family: 'Noto Sans Lao', sans-serif;
+}
+input::placeholder {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: bold;
+}
+
+.textGradient {
+  background: -webkit-linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.slider {
+  width: 100%;
+}
+
+.layout {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
