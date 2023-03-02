@@ -78,7 +78,7 @@ const TimerPanel = () => {
   return (
     <div className="flex h-full w-full flex-col items-center justify-center  font-jetMono">
       <h1 className="font-jetMono   text-xl font-bold lg:text-2xl">
-        Pomodororo Timer
+        Pomodoro Timer
       </h1>
 
       <ul className="m-3 flex gap-5">
