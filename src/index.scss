@@ -30,12 +30,12 @@
   .card {
     background: transparentize(#fff, 0.8);
     backdrop-filter: blur(20px);
-    // border: 1px solid transparentize(#fff, 0.5);
+    border: 1px solid transparentize(#fff, 0.8);
   }
   .cardDark {
     background: transparentize(rgb(40, 40, 40), 0.5);
     backdrop-filter: blur(20px);
-    // border: 1px solid transparentize(rgb(40, 40, 40), 0.5);
+    border: 1px solid transparentize(rgb(40, 40, 40), 0.5);
   }
 }
 

@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
         }}
       >
         <Header />
-        <main className=" flex  w-full items-center justify-center  sm:h-screen sm:py-16">
+        <main className=" flex  w-full items-center justify-center  sm:h-screen sm:py-14">
           {children}
         </main>
         <Footer />

@@ -45,7 +45,7 @@ const PomodoroTimer = () => {
         toggleActiveStyle,
       }}
     >
-      <div className="card dark:cardDark cardTheme  relative flex h-[65%] w-full flex-col items-center justify-center rounded-xl p-2  shadow-lg ">
+      <div className="card dark:cardDark cardTheme  relative flex h-[60%] w-full flex-col items-center justify-center rounded-xl p-2  shadow-lg ">
         {showSetting ? <SettingPanel /> : <TimerPanel />}
       </div>
     </PomodoroContext.Provider>

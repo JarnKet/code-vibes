@@ -77,7 +77,7 @@ const TimerPanel = () => {
 
   return (
     <div className="flex h-full w-full flex-col items-center justify-center  font-jetMono">
-      <h1 className="font-jetMono   text-2xl font-bold lg:text-4xl">
+      <h1 className="font-jetMono   text-xl font-bold lg:text-2xl">
         Pomodororo Timer
       </h1>
 
@@ -97,7 +97,7 @@ const TimerPanel = () => {
         ))}
       </ul>
 
-      <div className="mt-4 h-[150px] w-[150px]  font-bold sm:h-[200px] sm:w-[200px]">
+      <div className="mt-4  h-[150px]  w-[150px]  font-bold">
         <CircularProgressbar
           value={checkActive ? workPercentage : breakPercentage}
           text={minutes + ':' + seconds}
@@ -109,10 +109,10 @@ const TimerPanel = () => {
         />
       </div>
 
-      <div className="mt-6 flex items-center justify-center">
+      <div className="mt-6  ">
         {isPaused ? (
           <PlayIcon
-            className="darkThemeComponent mr-4 h-8 w-8 cursor-pointer rounded-lg"
+            className="darkThemeComponent  h-8 w-8 cursor-pointer rounded-lg"
             onClick={() => {
               setIsPaused(false);
               isPausedRef.current = false;
@@ -120,7 +120,7 @@ const TimerPanel = () => {
           />
         ) : (
           <PauseIcon
-            className="darkThemeComponent mr-4 h-8 w-8 cursor-pointer rounded-lg"
+            className="darkThemeComponent  h-8 w-8 cursor-pointer rounded-lg"
             onClick={() => {
               setIsPaused(true);
               isPausedRef.current = true;

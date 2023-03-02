@@ -2,99 +2,15 @@ import { useState, useContext } from 'react';
 import ReactHowler from 'react-howler';
 import { BackgroundContext } from '../context/BackgroundContext';
 import { MusicalNoteIcon } from '@heroicons/react/24/outline';
-import {
-  sea,
-  forest,
-  city,
-  cafe,
-  universe,
-  forestBG,
-  cityBG,
-  cafeBG,
-  universeBG,
-  seaBG,
-} from '../../assets';
-
-import {
-  forestAmbient,
-  cafeAmbient,
-  cityAmbient,
-  seaAmbient,
-  universeAmbient,
-} from '../../assets';
-
-import {
-  book,
-  keyboard,
-  rain,
-  keyboardSound,
-  bookSound,
-  rainSound,
-} from '../../assets';
-
+import { scene, environment } from '../../constants/soundContainerData';
 import { soundPlaylist } from '../../assets/playlist';
 
 const SoundContainer = () => {
   const { setBackground } = useContext(BackgroundContext);
   const [play, setPlay] = useState(false);
 
-  const [sceneSection, setSceneSection] = useState({
-    activeObject: null,
-    object: [
-      {
-        type: 'Forest',
-        id: 1,
-        icon: forest,
-        bg: forestBG,
-        sound: forestAmbient,
-        volume: 0.5,
-      },
-      {
-        type: 'Sea',
-        id: 2,
-        icon: sea,
-        bg: seaBG,
-        sound: seaAmbient,
-        volume: 0.3,
-      },
-      {
-        type: 'City',
-        id: 3,
-        icon: city,
-        bg: cityBG,
-        sound: cityAmbient,
-        volume: 0.1,
-      },
-      {
-        type: 'Universe',
-        id: 4,
-        icon: universe,
-        bg: universeBG,
-        sound: universeAmbient,
-        volume: 0.5,
-      },
-      {
-        type: 'Cafe',
-        id: 5,
-        icon: cafe,
-        bg: cafeBG,
-        sound: cafeAmbient,
-        volume: 0.3,
-      },
-    ],
-  });
-
-  const [environmentSound, setEnvironmentSound] = useState([
-    {
-      type: 'keyboard',
-      id: 1,
-      icon: keyboard,
-      active: false,
-      sound: keyboardSound,
-    },
-    { type: 'book', id: 2, icon: book, active: false, sound: bookSound },
-    { type: 'rain', id: 3, icon: rain, active: false, sound: rainSound },
-  ]);
+  const [sceneSection, setSceneSection] = useState(scene);
+  const [environmentSound, setEnvironmentSound] = useState(environment);
 
   const toggleEnvironment = (index) => {
     //* Update Object in Array
@@ -134,11 +50,11 @@ const SoundContainer = () => {
   };
 
   return (
-    <div className="cardTheme card dark:cardDark flex h-[35%]   w-full flex-col items-center justify-center rounded-xl shadow-lg ">
-      <h1 className="font-jetMono text-xl font-bold">Sound Container</h1>
+    <div className="cardTheme card dark:cardDark flex h-[40%] w-full   flex-col items-center justify-center rounded-xl p-4 shadow-lg ">
+      <h1 className="font-jetMono text-xl font-bold">Sound and Scene</h1>
 
       <MusicalNoteIcon
-        className={`my-4 h-12 w-12 cursor-pointer rounded-lg p-2 shadow-xl ${
+        className={`my-2 h-[50px] w-[50px]  cursor-pointer rounded-lg p-2 shadow-xl ${
           play ? 'active' : null
         }`}
         onClick={() => setPlay((prev) => !prev)}
@@ -147,21 +63,24 @@ const SoundContainer = () => {
         src={`${soundPlaylist}`}
         playing={play ? true : false}
         volume={1}
-        html5={true}
       />
 
-      <ul className="mb-4 flex w-full flex-row flex-wrap items-center justify-around">
+      <div className="mb-2 flex w-full flex-row  items-center justify-around">
         {environmentSound.map((element, index) => (
-          <li className="flex   items-center justify-center " key={index}>
+          <button
+            className="flex   items-center justify-center "
+            key={index}
+            type="button"
+            onClick={() => {
+              toggleEnvironment(index);
+            }}
+          >
             <img
-              className={`h-[50px] w-[50px] cursor-pointer overflow-hidden rounded-lg object-contain p-2 shadow-lg hover:shadow-xl sm:h-[70px] sm:w-[70px] ${toggleActiveStyle(
+              className={`h-[50px] w-[50px] cursor-pointer overflow-hidden rounded-lg object-contain p-2 shadow-lg hover:shadow-xl  ${toggleActiveStyle(
                 element.active
               )}`}
               src={element.icon}
               alt={element.type}
-              onClick={() => {
-                toggleEnvironment(index);
-              }}
             />
             <ReactHowler
               src={`${element.sound}`}
@@ -169,23 +88,27 @@ const SoundContainer = () => {
               loop={true}
               volume={0.5}
             />
-          </li>
+          </button>
         ))}
-      </ul>
+      </div>
 
-      <ul className="flex w-full flex-row flex-wrap items-center justify-around   ">
+      <div className="flex w-full flex-row  items-center justify-around   ">
         {sceneSection.object.map((element, index) => (
-          <li className="flex   items-center justify-center " key={index}>
+          <button
+            className="flex   items-center justify-center "
+            key={index}
+            type="button"
+            onClick={() => {
+              toggleSceneActive(index);
+              toggleActiveBackground(index);
+            }}
+          >
             <img
-              className={`h-[50px] w-[50px] cursor-pointer overflow-hidden rounded-lg object-contain p-2 shadow-lg hover:shadow-xl sm:h-[70px] sm:w-[70px] ${toggleActiveStyle(
+              className={`h-[50px] w-[50px] cursor-pointer overflow-hidden rounded-lg object-contain p-2 shadow-lg hover:shadow-xl  ${toggleActiveStyle(
                 sceneSection.activeObject === index
               )}`}
               src={element.icon}
               alt={element.type}
-              onClick={() => {
-                toggleSceneActive(index);
-                toggleActiveBackground(index);
-              }}
             />
             <ReactHowler
               src={`${element.sound}`}
@@ -193,9 +116,9 @@ const SoundContainer = () => {
               loop={true}
               volume={element.volume}
             />
-          </li>
+          </button>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

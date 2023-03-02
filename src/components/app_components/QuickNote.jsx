@@ -66,7 +66,7 @@ const QuickNote = () => {
 
   return (
     <div className="card dark:cardDark cardTheme flex  h-full  w-full flex-col  rounded-xl py-8 px-4  shadow-lg">
-      <h1 className="mb-4 text-center font-jetMono text-4xl font-bold uppercase">
+      <h1 className="mb-4 text-center font-jetMono text-2xl font-bold uppercase">
         Quick Note
       </h1>
 
@@ -76,7 +76,7 @@ const QuickNote = () => {
           onChange={handleInputChange}
           type="text"
           placeholder="enter your task"
-          className="mb-4 h-8 w-full rounded-xl px-4 py-8 shadow-xl dark:bg-neutral-800"
+          className="mb-4 h-8 w-full rounded-xl p-6  shadow-xl dark:bg-neutral-800"
         />
         <Button
           typeBtn={'submit'}
@@ -89,7 +89,7 @@ const QuickNote = () => {
       <ul className="scrollBarTheme flex  w-full flex-col overflow-y-auto">
         {todos.map((todo) => (
           <li
-            className={`text-md mb-2 flex w-full items-center justify-between rounded-lg p-2 font-notoLaos font-semibold text-black shadow-md dark:text-white`}
+            className={`mb-2 flex w-full items-center justify-between rounded-lg p-2 font-notoLaos text-base font-semibold text-black shadow-md dark:text-white`}
             key={todo.id}
             style={{
               textDecoration: todo.completed ? 'line-through' : 'none',

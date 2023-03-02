@@ -16,7 +16,7 @@ import universe from './images/universe.png'
 export { cafe, sea, city, forest, universe }
 
 import forestBG from './images/forestBG.jpg'
-import cityBG from './images/cityBG.jpg'
+import cityBG from './images/cityBG.png'
 import universeBG from './images/universeBG.jpg'
 import cafeBG from './images/cafeBG.jpg'
 import seaBG from './images/seaBG.jpg'
