@@ -3,7 +3,7 @@ import ReactHowler from 'react-howler';
 import { BackgroundContext } from '../context/BackgroundContext';
 import { MusicalNoteIcon } from '@heroicons/react/24/outline';
 import { scene, environment } from '../../constants/soundContainerData';
-import { soundPlaylist } from '../../assets/playlist';
+import { soundPlaylist, randomPlaylist } from '../../assets/playlist';
 
 const SoundContainer = () => {
   const { setBackground } = useContext(BackgroundContext);
@@ -63,6 +63,7 @@ const SoundContainer = () => {
         src={`${soundPlaylist}`}
         playing={play ? true : false}
         volume={1}
+        onEnd={() => randomPlaylist()}
       />
 
       <div className="mb-2 flex w-full flex-row  items-center justify-around">

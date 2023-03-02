@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <header className=" w-full sm:fixed  sm:mt-4 ">
-      <nav className="card dark:cardDark container mx-auto flex justify-between rounded-lg p-2 shadow-lg">
+      <nav className="card dark:cardDark container mx-auto flex max-w-3xl justify-between rounded-lg p-2 shadow-lg">
         <h1 className="font-jetMono text-xl font-extrabold sm:text-3xl">
           CODE <span className="textGradient">VIBES</span>
         </h1>

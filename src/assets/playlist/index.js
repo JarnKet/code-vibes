@@ -5,7 +5,10 @@ import playlist4 from './playlist4.mp3'
 
 const playlist = [playlist1, playlist2, playlist3, playlist4]
 const soundPlaylist = playlist[Math.floor(Math.random() * playlist.length)];
+const randomPlaylist = () => {
+    soundPlaylist = playlist[Math.floor(Math.random() * playlist.length)];
+}
 
 console.log(soundPlaylist);
 
-export { soundPlaylist }
+export { soundPlaylist, randomPlaylist }
