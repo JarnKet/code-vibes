@@ -77,15 +77,13 @@ const TimerPanel = () => {
 
   return (
     <div className="flex h-full w-full flex-col items-center justify-center  font-jetMono">
-      <h1 className="font-jetMono   text-xl font-bold lg:text-2xl">
-        Pomodoro Timer
-      </h1>
+      <h1 className="font-jetMono text-xl font-bold ">Pomodoro Timer</h1>
 
-      <ul className="m-3 flex gap-5">
+      <ul className="m-1 flex gap-3">
         {timerSection.object.map((element, index) => (
           <li
             key={index}
-            className={`w-[70px] cursor-pointer rounded-lg  p-2 text-center ${toggleActiveStyle(
+            className={`cursor-pointer rounded-lg p-2  text-center text-sm ${toggleActiveStyle(
               index
             )}`}
             onClick={() => {
@@ -97,7 +95,7 @@ const TimerPanel = () => {
         ))}
       </ul>
 
-      <div className="mt-4  h-[150px]  w-[150px]  font-bold">
+      <div className="mt-1 h-[120px] w-[120px] font-bold">
         <CircularProgressbar
           value={checkActive ? workPercentage : breakPercentage}
           text={minutes + ':' + seconds}
@@ -109,10 +107,10 @@ const TimerPanel = () => {
         />
       </div>
 
-      <div className="mt-6  ">
+      <div className="mt-2  ">
         {isPaused ? (
           <PlayIcon
-            className="darkThemeComponent  h-8 w-8 cursor-pointer rounded-lg"
+            className="darkThemeComponent  h-6 w-6 cursor-pointer rounded-lg"
             onClick={() => {
               setIsPaused(false);
               isPausedRef.current = false;
@@ -120,7 +118,7 @@ const TimerPanel = () => {
           />
         ) : (
           <PauseIcon
-            className="darkThemeComponent  h-8 w-8 cursor-pointer rounded-lg"
+            className="darkThemeComponent  h-6 w-6 cursor-pointer rounded-lg"
             onClick={() => {
               setIsPaused(true);
               isPausedRef.current = true;
@@ -129,7 +127,7 @@ const TimerPanel = () => {
         )}
       </div>
       <Cog6ToothIcon
-        className="darkThemeComponent absolute top-5 right-5 h-8 w-8 cursor-pointer rounded-lg"
+        className="darkThemeComponent absolute top-5 right-5 h-6 w-6 cursor-pointer rounded-lg"
         onClick={() => setShowSetting((prev) => !prev)}
       />
     </div>

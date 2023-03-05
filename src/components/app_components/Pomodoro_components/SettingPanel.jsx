@@ -29,14 +29,14 @@ const SettingPanel = () => {
 
   return (
     <div className="flex h-auto w-auto flex-col items-center justify-center  font-jetMono">
-      <h1 className=" mb-6 font-bold lg:text-4xl">Setting Panel</h1>
+      <h1 className=" mb-6 text-xl font-bold">Setting Panel</h1>
 
       <form noValidate className="flex w-full flex-col gap-4">
         <input
           type="text"
           name="work"
           placeholder="Work Minutes"
-          className="rounded-lg p-2 shadow-xl dark:bg-neutral-800"
+          className="rounded-lg p-1 shadow-xl dark:bg-neutral-800"
           value={workTime}
           onChange={workHandleChange}
         />
@@ -44,7 +44,7 @@ const SettingPanel = () => {
           type="text"
           name="break"
           placeholder="Break Minutes"
-          className="rounded-lg p-2 shadow-xl dark:bg-neutral-800"
+          className="rounded-lg p-1 shadow-xl dark:bg-neutral-800"
           value={breakTime}
           onChange={breakHandleChange}
         />
@@ -58,7 +58,7 @@ const SettingPanel = () => {
 
       <div className="absolute top-5 right-5">
         <XMarkIcon
-          className="darkThemeComponent h-8 w-8 cursor-pointer rounded-lg"
+          className="darkThemeComponent h-6 w-6 cursor-pointer rounded-lg"
           onClick={() => {
             setShowSetting((prev) => !prev);
           }}

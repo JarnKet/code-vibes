@@ -66,7 +66,7 @@ const QuickNote = () => {
 
   return (
     <div className="card dark:cardDark cardTheme flex  h-full  w-full flex-col  rounded-xl py-8 px-4  shadow-lg">
-      <h1 className="mb-4 text-center font-jetMono text-2xl font-bold uppercase">
+      <h1 className="mb-4 text-center font-jetMono text-xl font-bold uppercase">
         Quick Note
       </h1>
 
@@ -89,7 +89,7 @@ const QuickNote = () => {
       <ul className="scrollBarTheme flex  w-full flex-col overflow-y-auto">
         {todos.map((todo) => (
           <li
-            className={`mb-2 flex w-full items-center justify-between rounded-lg p-2 font-notoLaos text-base font-semibold text-black shadow-md dark:text-white`}
+            className={`mb-2 flex w-full items-center justify-between rounded-lg p-2 font-notoLaos text-sm font-semibold text-black shadow-md dark:text-white`}
             key={todo.id}
             style={{
               textDecoration: todo.completed ? 'line-through' : 'none',
@@ -98,7 +98,7 @@ const QuickNote = () => {
           >
             <div className="flex items-center justify-center">
               <CheckCircleIcon
-                className="mr-2 h-8 w-8 cursor-pointer"
+                className="mr-2 h-6 w-6 cursor-pointer"
                 onClick={() => {
                   handleCompleteClick(todo);
                   playSound(clickSound);
@@ -108,7 +108,7 @@ const QuickNote = () => {
             </div>
             <div className="flex items-center justify-center">
               <BackspaceIcon
-                className=" h-8 w-8 cursor-pointer"
+                className=" h-6 w-6 cursor-pointer"
                 onClick={() => handleDeleteClick(todo.id)}
               />
             </div>

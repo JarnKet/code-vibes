@@ -21,12 +21,12 @@ const Header = () => {
   return (
     <header className=" w-full sm:fixed  sm:mt-4 ">
       <nav className="card dark:cardDark container mx-auto flex max-w-3xl justify-between rounded-lg p-2 shadow-lg">
-        <h1 className="font-jetMono text-xl font-extrabold sm:text-3xl">
+        <h1 className="font-jetMono  font-extrabold sm:text-xl">
           CODE <span className="textGradient">VIBES</span>
         </h1>
 
         <div className="flex items-center justify-center ">
-          <p className="mr-4 font-jetMono sm:text-lg">
+          <p className="text-md mr-4 font-jetMono">
             {date.toLocaleTimeString()}
           </p>
 
@@ -38,7 +38,7 @@ const Header = () => {
               playSound(switchThemeSound);
             }}
           >
-            <div className=" h-8 w-8">{theme ? <MoonIcon /> : <SunIcon />}</div>
+            <div className=" h-6 w-6">{theme ? <MoonIcon /> : <SunIcon />}</div>
           </button>
         </div>
       </nav>

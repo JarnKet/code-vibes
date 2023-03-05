@@ -51,10 +51,10 @@ const SoundContainer = () => {
 
   return (
     <div className="cardTheme card dark:cardDark flex h-[40%] w-full   flex-col items-center justify-center rounded-xl p-4 shadow-lg ">
-      <h1 className="font-jetMono text-xl font-bold">Sound and Scene</h1>
+      {/* <h1 className="font-jetMono text-xl font-bold">Sound and Scene</h1> */}
 
       <MusicalNoteIcon
-        className={`my-2 h-[50px] w-[50px]  cursor-pointer rounded-lg p-2 shadow-xl ${
+        className={`my-2 h-10 w-10  cursor-pointer rounded-lg p-2 shadow-xl ${
           play ? 'active' : null
         }`}
         onClick={() => setPlay((prev) => !prev)}
@@ -77,7 +77,7 @@ const SoundContainer = () => {
             }}
           >
             <img
-              className={`h-[50px] w-[50px] cursor-pointer overflow-hidden rounded-lg object-contain p-2 shadow-lg hover:shadow-xl  ${toggleActiveStyle(
+              className={`h-10 w-10 cursor-pointer overflow-hidden rounded-lg object-contain p-2 shadow-lg hover:shadow-xl  ${toggleActiveStyle(
                 element.active
               )}`}
               src={element.icon}
@@ -105,7 +105,7 @@ const SoundContainer = () => {
             }}
           >
             <img
-              className={`h-[50px] w-[50px] cursor-pointer overflow-hidden rounded-lg object-contain p-2 shadow-lg hover:shadow-xl  ${toggleActiveStyle(
+              className={`h-10 w-10 cursor-pointer overflow-hidden rounded-lg object-contain p-2 shadow-lg hover:shadow-xl  ${toggleActiveStyle(
                 sceneSection.activeObject === index
               )}`}
               src={element.icon}
